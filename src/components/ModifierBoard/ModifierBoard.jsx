@@ -12,16 +12,14 @@ import { changeVolume } from '../../redux/actions';
 
 const ModifierBoard = () => {
   const dispatch = useDispatch();
-  const data = useSelector((state) => state.moodState);
   const rainData = useSelector((state) => state.rainState);
   const volumeData = useSelector((state) => state.volumeState);
 
   const { rainValue } = rainData;
-  const { moodMode } = data;
   const { volumeValue } = volumeData;
 
   const [openMood, setOpenMood] = useState(false);
-  const [openFocus, setOpenFocus] = useState(false);
+  const [openScenes, setOpenScenes] = useState(false);
 
   const [cityTraffic, setCityTraffic] = useState(0);
   const [cityRain, setCityRain] = useState(rainValue);
@@ -46,11 +44,12 @@ const ModifierBoard = () => {
 
   const openMoodHandler = () => {
     setOpenMood(!openMood);
-    setOpenFocus(false);
+    setOpenScenes(false);
   };
 
-  const changeMoodHandler = (e) => {
-    dispatch(changeMoodStatus(e.target.id));
+  const openScenesHandler = () => {
+    setOpenScenes(!openScenes);
+    setOpenMood(false);
   };
 
   const changeVolumeHandler = (e) => {
@@ -88,7 +87,7 @@ const ModifierBoard = () => {
       )}
       <div
         className={
-          `modifier ` + (openMood && 'mood ') + (openFocus && ' focus ')
+          `modifier ` + (openMood && 'mood ') + (openScenes && ' focus ')
         }
       >
         <div className='modifier__icon'>
@@ -97,32 +96,9 @@ const ModifierBoard = () => {
           </div>
           {openMood && (
             <div className='modifierBox'>
-              <h4>Mood</h4>
+              <h4>Volume principal</h4>
               <div className='options'>
-                <div
-                  id='sleep'
-                  onClick={changeMoodHandler}
-                  className={`item ` + (moodMode === 'sleep' ? 'active' : '')}
-                >
-                  <i id='sleep' className='fas fa-moon fa-2x'></i>
-                  <span id='sleep'>Sleep</span>
-                </div>
-                <div
-                  id='jazzy'
-                  onClick={changeMoodHandler}
-                  className={`item ` + (moodMode === 'jazzy' ? 'active' : '')}
-                >
-                  <i id='jazzy' className='fas fa-guitar fa-2x'></i>
-                  <span id='jazzy'>Jazzy</span>
-                </div>
-                <div
-                  id='chill'
-                  onClick={changeMoodHandler}
-                  className={`item ` + (moodMode === 'chill' ? 'active' : '')}
-                >
-                  <i id='chill' className='fas fa-coffee fa-2x'></i>
-                  <span id='chill'>Chill</span>
-                </div>
+
               </div>
               <div className='volume'>
                 <Stack
@@ -140,10 +116,10 @@ const ModifierBoard = () => {
                   <i className='fas fa-volume-up fa-lg'></i>
                 </Stack>
               </div>
-              <h5>Background Noise</h5>
+              <h5>Sons d'ambiance</h5>
               <div className='backgroundNoise'>
                 <div className='noise-option'>
-                  <p>City traffic</p>
+                  <p>Trafic urbain</p>
                   <ReactAudioPlayer
                     preload='auto'
                     autoPlay
@@ -158,7 +134,7 @@ const ModifierBoard = () => {
                   />
                 </div>
                 <div className='noise-option'>
-                  <p>City rain</p>
+                  <p>Pluie en ville</p>
                   <ReactAudioPlayer
                     preload='auto'
                     autoPlay
@@ -173,7 +149,7 @@ const ModifierBoard = () => {
                   />
                 </div>
                 <div className='noise-option'>
-                  <p>Fireplace</p>
+                  <p>Cheminée</p>
                   <ReactAudioPlayer
                     preload='auto'
                     autoPlay
@@ -188,7 +164,7 @@ const ModifierBoard = () => {
                   />
                 </div>
                 <div className='noise-option'>
-                  <p>Snow</p>
+                  <p>Neige</p>
                   <ReactAudioPlayer
                     preload='auto'
                     autoPlay
@@ -203,7 +179,7 @@ const ModifierBoard = () => {
                   />
                 </div>
                 <div className='noise-option'>
-                  <p>Summer Storm</p>
+                  <p>Tempête d'été</p>
                   <ReactAudioPlayer
                     preload='auto'
                     autoPlay
@@ -218,7 +194,7 @@ const ModifierBoard = () => {
                   />
                 </div>
                 <div className='noise-option'>
-                  <p>Fan</p>
+                  <p>Ventilateur</p>
                   <ReactAudioPlayer
                     preload='auto'
                     autoPlay
@@ -233,7 +209,7 @@ const ModifierBoard = () => {
                   />
                 </div>
                 <div className='noise-option'>
-                  <p>Forest Night</p>
+                  <p>Nuit en forêt</p>
                   <ReactAudioPlayer
                     preload='auto'
                     autoPlay
@@ -248,7 +224,7 @@ const ModifierBoard = () => {
                   />
                 </div>
                 <div className='noise-option'>
-                  <p>Wave</p>
+                  <p>Vague</p>
                   <ReactAudioPlayer
                     preload='auto'
                     autoPlay
@@ -263,7 +239,7 @@ const ModifierBoard = () => {
                   />
                 </div>
                 <div className='noise-option'>
-                  <p>Wind</p>
+                  <p>Vent</p>
                   <ReactAudioPlayer
                     preload='auto'
                     autoPlay
@@ -278,7 +254,7 @@ const ModifierBoard = () => {
                   />
                 </div>
                 <div className='noise-option'>
-                  <p>People</p>
+                  <p>Personnes</p>
                   <ReactAudioPlayer
                     preload='auto'
                     autoPlay
@@ -293,7 +269,7 @@ const ModifierBoard = () => {
                   />
                 </div>
                 <div className='noise-option'>
-                  <p>River</p>
+                  <p>Rivière</p>
                   <ReactAudioPlayer
                     preload='auto'
                     autoPlay
@@ -308,7 +284,7 @@ const ModifierBoard = () => {
                   />
                 </div>
                 <div className='noise-option'>
-                  <p>Rain Forest</p>
+                  <p>Pluie en forêt</p>
                   <ReactAudioPlayer
                     preload='auto'
                     autoPlay
@@ -326,6 +302,20 @@ const ModifierBoard = () => {
             </div>
           )}
         </div>
+        <div className='modifier__icon'>
+          <div className={'icon ' + (openScenes && 'active')}>
+            <i
+                onClick={openScenesHandler}
+                className='fas fa-images fa-2x'
+            ></i>
+          </div>
+        </div>
+        {openScenes && (
+            <div className='modifierBox scenes-tmp'>
+              <h4>Lieux</h4>
+              <p>Soon !</p>
+            </div>
+        )}
       </div>
     </>
   );

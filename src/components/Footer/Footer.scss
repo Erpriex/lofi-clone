@@ -12,7 +12,7 @@
 
   .author {
     display: flex;
-    align-items: center;
+    flex-direction: column;
 
     span {
       color: white;

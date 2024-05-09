@@ -1,3 +1,21 @@
+export const songs = [
+  {
+    id: 0,
+    name: 'Azuku - Neon Lights',
+    src: './assets/lofi/music0.mp3',
+  },
+  {
+    id: 1,
+    name: 'lofi.co 2021 © - Jazz 1',
+    src: './assets/lofi/jazz1.mp3',
+  },
+  {
+    id: 2,
+    name: 'lofi.co 2021 © - Jazz 2',
+    src: './assets/lofi/jazz2.mp3',
+  },
+];
+
 export const chill = [
   {
     id: 0,

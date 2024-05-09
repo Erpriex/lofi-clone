@@ -47,7 +47,7 @@ const Player = ({ currentSongIndex, setCurrentSongIndex, songs }) => {
   };
   return (
     <div className='music-player'>
-      <audio loop src={songs[currentSongIndex].src} ref={audioElement}></audio>
+      <audio src={songs[currentSongIndex].src} ref={audioElement} onEnded={() => SkipSong()}></audio>
       <div className='music-player--controls'>
         <button className='skip-btn' onClick={() => SkipSong(false)}>
           <img src='/assets/icons/prev.svg' alt='' />

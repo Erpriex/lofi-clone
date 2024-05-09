@@ -52,6 +52,9 @@
   padding: 15px 30px;
   transform-origin: right top;
   border-radius: 30px;
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 
   .options {
     display: flex;
@@ -107,12 +110,10 @@
 .backgroundNoise {
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
   .noise-option {
     p {
       margin-bottom: 0;
+      color: #9fa3ab
     }
     .slider {
       height: 10px !important;
@@ -129,4 +130,12 @@
     text-align: center;
     justify-content: space-between;
   }
+}
+
+.scenes-tmp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #FFF
 }
