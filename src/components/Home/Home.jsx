@@ -6,7 +6,6 @@ import RainToggleButton from '../RainToggleButton/RainToggleButton';
 import ModifierBoard from '../ModifierBoard/ModifierBoard';
 import Footer from '../Footer/Footer';
 import { useTimer } from 'react-timer-hook';
-import YoutubeVideo from '../YoutubeVideo/YoutubeVideo';
 
 const Home = () => {
   const [timerStart, setTimerStart] = useState(false);
@@ -86,7 +85,6 @@ const Home = () => {
         setTimerStart={setTimerStart}
         timerStart={timerStart}
       />
-      <YoutubeVideo />
       <Footer />
     </>
   );

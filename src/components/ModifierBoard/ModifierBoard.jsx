@@ -9,21 +9,8 @@ import { changeMoodStatus } from '../../redux/actions';
 import ReactAudioPlayer from 'react-audio-player';
 import { changeRainStatus } from '../../redux/actions';
 import { changeVolume } from '../../redux/actions';
-import CountDownTimer from '../CountDownTimer/CountDownTimer';
-import TodoList from '../TodoList/TodoList';
 
-const ModifierBoard = ({
-  seconds,
-  minutes,
-  hours,
-  isRunning,
-  pause,
-  resume,
-  restart,
-  setTimerHandler,
-  setTimerStart,
-  timerStart,
-}) => {
+const ModifierBoard = () => {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.moodState);
   const rainData = useSelector((state) => state.rainState);
@@ -55,11 +42,6 @@ const ModifierBoard = ({
     // if value = 0 then stop rain
     else if (e.target.value === 0) dispatch(changeRainStatus('rain', 0));
     setCityRain(e.target.value);
-  };
-
-  const openFocusHandler = () => {
-    setOpenFocus(!openFocus);
-    setOpenMood(false);
   };
 
   const openMoodHandler = () => {
@@ -344,33 +326,6 @@ const ModifierBoard = ({
             </div>
           )}
         </div>
-        <div className='modifier__icon'>
-          <div className={'icon ' + (openFocus && 'active')}>
-            <i
-              onClick={openFocusHandler}
-              className='fas fa-book-reader fa-2x'
-            ></i>
-          </div>
-        </div>
-        {openFocus && (
-          <div className='modifierBox'>
-            <h4>Focus Mode</h4>
-            <CountDownTimer
-              seconds={seconds}
-              minutes={minutes}
-              hours={hours}
-              isRunning={isRunning}
-              pause={pause}
-              resume={resume}
-              restart={restart}
-              setTimerHandler={setTimerHandler}
-              setTimerStart={setTimerStart}
-              timerStart={timerStart}
-            />
-            <h4>To do list</h4>
-            <TodoList />
-          </div>
-        )}
       </div>
     </>
   );
