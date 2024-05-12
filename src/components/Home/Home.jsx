@@ -17,7 +17,7 @@ const Home = () => {
 
   return (
     <>
-      {/* Embedded the background video base on each state */}
+      {/* Embedded the background videos base on each state */}
       {/* Night */}
       <video
         className={combineMode === 'night-clear' ? 'videoIn' : 'videoOut'}
@@ -25,7 +25,7 @@ const Home = () => {
         loop
         muted
       >
-        <source src='/assets/video/Night-clear.mp4' type='video/mp4' />
+        <source src='/assets/videos/Night-clear.mp4' type='video/mp4' />
       </video>
       <video
         className={combineMode === 'night-rain' ? 'videoIn' : 'videoOut'}
@@ -33,7 +33,7 @@ const Home = () => {
         loop
         muted
       >
-        <source src='/assets/video/Night-rainny.mp4' type='video/mp4' />
+        <source src='/assets/videos/Night-rainny.mp4' type='video/mp4' />
       </video>
       {/* Day */}
       <video
@@ -42,7 +42,7 @@ const Home = () => {
         loop
         muted
       >
-        <source src='/assets/video/Day-sunny.mp4' type='video/mp4' />
+        <source src='/assets/videos/Day-sunny.mp4' type='video/mp4' />
       </video>
       <video
         className={combineMode === 'day-rain' ? 'videoIn' : 'videoOut'}
@@ -50,7 +50,7 @@ const Home = () => {
         loop
         muted
       >
-        <source src='/assets/video/Day-rainny.mp4' type='video/mp4' />
+        <source src='/assets/videos/Day-rainny.mp4' type='video/mp4' />
       </video>
       <RainToggleButton />
       <ModifierBoard />

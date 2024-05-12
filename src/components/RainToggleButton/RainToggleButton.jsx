@@ -24,7 +24,7 @@ const RainToggleButton = () => {
         <ReactAudioPlayer
           preload='auto'
           autoPlay
-          src='./assets/musics/rain_city.mp3'
+          src='./assets/sounds/rain_city.mp3'
           loop
           volume={rainValue / 100}
         />

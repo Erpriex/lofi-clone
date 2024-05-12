@@ -63,7 +63,7 @@ const ModifierBoard = () => {
           <ReactAudioPlayer
             preload='auto'
             autoPlay
-            src='./assets/musics/city_traffic.mp3'
+            src='./assets/sounds/city_traffic.mp3'
             loop
             volume={cityTraffic / 100}
           />
@@ -71,7 +71,7 @@ const ModifierBoard = () => {
           <ReactAudioPlayer
             preload='auto'
             autoPlay
-            src='./assets/musics/fireplace.mp3'
+            src='./assets/sounds/fireplace.mp3'
             loop
             volume={fireplace / 100}
           />
@@ -79,7 +79,7 @@ const ModifierBoard = () => {
           <ReactAudioPlayer
             preload='auto'
             autoPlay
-            src='./assets/musics/rain_city.mp3'
+            src='./assets/sounds/rain_city.mp3'
             loop
             volume={rainValue / 100}
           />
@@ -123,7 +123,7 @@ const ModifierBoard = () => {
                   <ReactAudioPlayer
                     preload='auto'
                     autoPlay
-                    src='./assets/musics/city_traffic.mp3'
+                    src='./assets/sounds/city_traffic.mp3'
                     loop
                     volume={cityTraffic / 100}
                   />
@@ -138,7 +138,7 @@ const ModifierBoard = () => {
                   <ReactAudioPlayer
                     preload='auto'
                     autoPlay
-                    src='./assets/musics/rain_city.mp3'
+                    src='./assets/sounds/rain_city.mp3'
                     loop
                     volume={rainValue / 100}
                   />
@@ -153,7 +153,7 @@ const ModifierBoard = () => {
                   <ReactAudioPlayer
                     preload='auto'
                     autoPlay
-                    src='./assets/musics/fireplace.mp3'
+                    src='./assets/sounds/fireplace.mp3'
                     loop
                     volume={fireplace / 100}
                   />
@@ -168,7 +168,7 @@ const ModifierBoard = () => {
                   <ReactAudioPlayer
                     preload='auto'
                     autoPlay
-                    src='./assets/musics/snow.mp3'
+                    src='./assets/sounds/snow.mp3'
                     loop
                     volume={snow / 100}
                   />
@@ -183,7 +183,7 @@ const ModifierBoard = () => {
                   <ReactAudioPlayer
                     preload='auto'
                     autoPlay
-                    src='./assets/musics/summer_storm.mp3'
+                    src='./assets/sounds/summer_storm.mp3'
                     loop
                     volume={summerStorm / 100}
                   />
@@ -198,7 +198,7 @@ const ModifierBoard = () => {
                   <ReactAudioPlayer
                     preload='auto'
                     autoPlay
-                    src='./assets/musics/fan.mp3'
+                    src='./assets/sounds/fan.mp3'
                     loop
                     volume={fan / 100}
                   />
@@ -213,7 +213,7 @@ const ModifierBoard = () => {
                   <ReactAudioPlayer
                     preload='auto'
                     autoPlay
-                    src='./assets/musics/forest_night.mp3'
+                    src='./assets/sounds/forest_night.mp3'
                     loop
                     volume={forestNight / 100}
                   />
@@ -228,7 +228,7 @@ const ModifierBoard = () => {
                   <ReactAudioPlayer
                     preload='auto'
                     autoPlay
-                    src='./assets/musics/waves.mp3'
+                    src='./assets/sounds/waves.mp3'
                     loop
                     volume={wave / 100}
                   />
@@ -243,7 +243,7 @@ const ModifierBoard = () => {
                   <ReactAudioPlayer
                     preload='auto'
                     autoPlay
-                    src='./assets/musics/wind.mp3'
+                    src='./assets/sounds/wind.mp3'
                     loop
                     volume={wind / 100}
                   />
@@ -258,7 +258,7 @@ const ModifierBoard = () => {
                   <ReactAudioPlayer
                     preload='auto'
                     autoPlay
-                    src='./assets/musics/people_talk_inside.mp3'
+                    src='./assets/sounds/people_talk_inside.mp3'
                     loop
                     volume={people / 100}
                   />
@@ -273,7 +273,7 @@ const ModifierBoard = () => {
                   <ReactAudioPlayer
                     preload='auto'
                     autoPlay
-                    src='./assets/musics/river.mp3'
+                    src='./assets/sounds/river.mp3'
                     loop
                     volume={river / 100}
                   />
@@ -288,7 +288,7 @@ const ModifierBoard = () => {
                   <ReactAudioPlayer
                     preload='auto'
                     autoPlay
-                    src='./assets/musics/rain_forest.mp3'
+                    src='./assets/sounds/rain_forest.mp3'
                     loop
                     volume={rainForest / 100}
                   />
