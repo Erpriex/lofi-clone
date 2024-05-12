@@ -9,7 +9,7 @@ const Player = ({ currentSongIndex, setCurrentSongIndex, songs }) => {
   const { volumeValue } = data;
 
   const audioElement = useRef();
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
 
   useEffect(() => {
     if (isPlaying) {

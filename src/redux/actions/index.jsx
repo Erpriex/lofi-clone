@@ -1,12 +1,8 @@
 import {
   SET_MODE,
   SET_RAIN,
-  SET_MOOD,
   SET_VOLUME,
-  LIST_ADD,
-  LIST_REMOVE,
-  LIST_ADD_DONE,
-  LIST_REMOVE_DONE,
+  SET_SCENE,
 } from '../constantsType/actionType';
 
 export const setMode = (payload) => ({
@@ -20,14 +16,14 @@ export const setRain = (payload, value) => ({
   rainValue: value,
 });
 
-export const setMood = (payload) => ({
-  type: SET_MOOD,
-  moodMode: payload,
-});
-
 export const setVolume = (payload) => ({
   type: SET_VOLUME,
   volumeValue: payload,
+});
+
+export const setScene = (payload) => ({
+  type: SET_SCENE,
+  sceneValue: payload,
 });
 
 export function changeDayNight(currentStatus) {
@@ -48,68 +44,14 @@ export function changeRainStatus(currentStatus, value) {
   };
 }
 
-export function changeMoodStatus(currentStatus) {
-  return (dispatch) => {
-    dispatch(setMood(currentStatus));
-  };
-}
-
 export function changeVolume(currentStatus) {
   return (dispatch) => {
     dispatch(setVolume(currentStatus));
   };
 }
 
-export const addList = (name) => async (dispatch, getState) => {
-  dispatch({
-    type: LIST_ADD,
-    payload: {
-      name: name,
-      complete: false,
-    },
-  });
-  // save to local storage as listItems
-  localStorage.setItem(
-    'listItems',
-    JSON.stringify(getState().todoItems.todoList)
-  );
-};
-
-export const removeList = (name) => async (dispatch, getState) => {
-  dispatch({
-    type: LIST_REMOVE,
-    payload: name,
-  });
-  localStorage.setItem(
-    'listItems',
-    JSON.stringify(getState().todoItems.todoList)
-  );
-};
-
-export const addDone = (name) => async (dispatch, getState) => {
-  dispatch({
-    type: LIST_ADD_DONE,
-    payload: {
-      name: name,
-      complete: true,
-    },
-  });
-  localStorage.setItem(
-    'listItems',
-    JSON.stringify(getState().todoItems.todoList)
-  );
-};
-
-export const removeDone = (name) => async (dispatch, getState) => {
-  dispatch({
-    type: LIST_REMOVE_DONE,
-    payload: {
-      name: name,
-      complete: false,
-    },
-  });
-  localStorage.setItem(
-    'listItems',
-    JSON.stringify(getState().todoItems.todoList)
-  );
-};
+export function changeScene(currentStatus) {
+  return (dispatch) => {
+    dispatch(setScene(currentStatus));
+  };
+}

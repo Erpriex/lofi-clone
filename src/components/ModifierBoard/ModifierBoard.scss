@@ -132,10 +132,16 @@
   }
 }
 
-.scenes-tmp {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  color: #FFF
+.sceneselector {
+  cursor: pointer;
+  margin-top: 35px;
+}
+
+.currentscene {
+  border: solid;
+  border-color: #f3a952;
+}
+
+.sceneselector__thumb {
+  width: 100%;
 }

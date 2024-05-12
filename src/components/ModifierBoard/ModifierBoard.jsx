@@ -4,19 +4,20 @@ import { useSelector, useDispatch } from 'react-redux';
 import './ModifierBoard.scss';
 import Stack from '@mui/material/Stack';
 import Slider from '@mui/material/Slider';
-import { changeMoodStatus } from '../../redux/actions';
 
 import ReactAudioPlayer from 'react-audio-player';
-import { changeRainStatus } from '../../redux/actions';
+import {changeRainStatus, changeScene} from '../../redux/actions';
 import { changeVolume } from '../../redux/actions';
 
 const ModifierBoard = () => {
   const dispatch = useDispatch();
   const rainData = useSelector((state) => state.rainState);
   const volumeData = useSelector((state) => state.volumeState);
+  const sceneData = useSelector((state) => state.sceneState);
 
   const { rainValue } = rainData;
   const { volumeValue } = volumeData;
+  const { sceneValue } = sceneData;
 
   const [openMood, setOpenMood] = useState(false);
   const [openScenes, setOpenScenes] = useState(false);
@@ -54,6 +55,10 @@ const ModifierBoard = () => {
 
   const changeVolumeHandler = (e) => {
     dispatch(changeVolume(e.target.value));
+  };
+
+  const changeSceneHandler = (value) => {
+    dispatch(changeScene(value));
   };
 
   return (
@@ -311,9 +316,16 @@ const ModifierBoard = () => {
           </div>
         </div>
         {openScenes && (
-            <div className='modifierBox scenes-tmp'>
+            <div className='modifierBox'>
               <h4>Lieux</h4>
-              <p>Soon !</p>
+              <div className={`sceneselector ${sceneValue === "chillVibes" ? "currentscene" : ""}`}
+                   onClick={(e) => changeSceneHandler("chillVibes")}>
+                <img className="sceneselector__thumb" src="./assets/thumbnails/chillVibes.png" alt="Chill Vibes"/>
+              </div>
+              <div className={`sceneselector ${sceneValue === "cozyStudio" ? "currentscene" : ""}`}
+                   onClick={(e) => changeSceneHandler("cozyStudio")}>
+                <img className="sceneselector__thumb" src="./assets/thumbnails/cozyStudio.png" alt="Cozy Studio"/>
+              </div>
             </div>
         )}
       </div>
