@@ -54,4 +54,9 @@ export const songs = [
     name: 'Azuku - Neon Lights',
     src: './assets/musics/music0.mp3',
   },
+  {
+    id: 11,
+    name: 'lofi.co 2021 © - Jazz 13',
+    src: './assets/musics/jazz13.mp3',
+  },
 ];

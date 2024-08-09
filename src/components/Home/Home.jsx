@@ -55,6 +55,42 @@ const Home = () => {
               <source src='/assets/videos/chill_vibes/Chill_day_rain.mp4' type='video/mp4'/>
           </video>
 
+          {/* Chill Vibes 2 */}
+          {/* Night */}
+          <video
+              className={combineMode === 'night-clear' && sceneValue === 'chillVibes2' ? 'videoIn' : 'videoOut'}
+              autoPlay
+              loop
+              muted
+          >
+              <source src='/assets/videos/chill_vibes2/Chill2_night.mp4' type='video/mp4'/>
+          </video>
+          <video
+              className={combineMode === 'night-rain' && sceneValue === 'chillVibes2' ? 'videoIn' : 'videoOut'}
+              autoPlay
+              loop
+              muted
+          >
+              <source src='/assets/videos/chill_vibes2/Chill2_night_rain.mp4' type='video/mp4'/>
+          </video>
+          {/* Day */}
+          <video
+              className={combineMode === 'day-clear' && sceneValue === 'chillVibes2' ? 'videoIn' : 'videoOut'}
+              autoPlay
+              loop
+              muted
+          >
+              <source src='/assets/videos/chill_vibes2/Chill2_day.mp4' type='video/mp4'/>
+          </video>
+          <video
+              className={combineMode === 'day-rain' && sceneValue === 'chillVibes2' ? 'videoIn' : 'videoOut'}
+              autoPlay
+              loop
+              muted
+          >
+              <source src='/assets/videos/chill_vibes2/Chill2_day_rain.mp4' type='video/mp4'/>
+          </video>
+
           {/* Cozy Studio */}
           {/* Night */}
           <video
