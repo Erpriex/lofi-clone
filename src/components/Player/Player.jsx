@@ -9,7 +9,7 @@ const Player = ({ currentSongIndex, setCurrentSongIndex, songs }) => {
   const { volumeValue } = data;
 
   const audioElement = useRef();
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
     if (isPlaying) {
@@ -50,17 +50,17 @@ const Player = ({ currentSongIndex, setCurrentSongIndex, songs }) => {
       <audio src={songs[currentSongIndex].src} ref={audioElement} onEnded={() => SkipSong()}></audio>
       <div className='music-player--controls'>
         <button className='skip-btn' onClick={() => SkipSong(false)}>
-          <img src='/assets/icons/prev.svg' alt='' />
+          <img src='/assets/icons/backwardButton.png' alt='' />
         </button>
         <button className='play-btn' onClick={() => setIsPlaying(!isPlaying)}>
           {isPlaying ? (
-            <img src='/assets/icons/pause.svg' alt='' />
+            <img src='/assets/icons/pauseButton.png' alt='' />
           ) : (
-            <img src='/assets/icons/play.svg' alt='' />
+            <img src='/assets/icons/playButton.png' alt='' />
           )}
         </button>
         <button className='skip-btn' onClick={() => SkipSong()}>
-          <img src='/assets/icons/next.svg' alt='' />
+          <img src='/assets/icons/forwardButton.png' alt='' />
         </button>
       </div>
     </div>
