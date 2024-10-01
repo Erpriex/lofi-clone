@@ -1,4 +1,4 @@
-export const songs = [
+let songsArray = [
   {
     id: 0,
     name: 'lofi.co 2021 © - Chill 1',
@@ -59,4 +59,39 @@ export const songs = [
     name: 'lofi.co 2021 © - Jazz 13',
     src: './assets/musics/jazz13.mp3',
   },
+  {
+    id: 12,
+    name: 'Noji - Exhale',
+    src: './assets/musics/music1.mp3',
+  },
+  {
+    id: 13,
+    name: 'Home Grown – getaway',
+    src: './assets/musics/music2.mp3',
+  },
+  {
+    id: 14,
+    name: 'drowsy – lost world',
+    src: './assets/musics/music3.mp3',
+  },
+  {
+    id: 15,
+    name: 'Hazue – Rest',
+    src: './assets/musics/music4.mp3',
+  },
+  {
+    id: 16,
+    name: 'Home Grown – End of the Road',
+    src: './assets/musics/music5.mp3',
+  },
 ];
+
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+export const songs = shuffleArray([...songsArray]);

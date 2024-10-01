@@ -6,7 +6,7 @@ import Player from '../Player/Player';
 
 const Footer = () => {
 
-  const [currentSongIndex, setCurrentSongIndex] = useState(2);
+  const [currentSongIndex, setCurrentSongIndex] = useState(0);
 
   return (
     <div className='footer'>
