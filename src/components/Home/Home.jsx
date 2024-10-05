@@ -126,7 +126,6 @@ const Home = () => {
           >
               <source src='/assets/videos/cozy_studio/Cozy_day_rain.mp4' type='video/mp4'/>
           </video>
-          <RainToggleButton/>
           <ModifierBoard/>
           <Footer/>
       </>

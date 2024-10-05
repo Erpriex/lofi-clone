@@ -1,7 +1,12 @@
 import { SET_MODE } from '../constantsType/actionType';
 
+const getInitialMode = () => {
+  const currentHour = new Date().getHours();
+  return currentHour >= 7 && currentHour < 20 ? 'day' : 'night';
+};
+
 const INITIAL_STATE = {
-  mode: 'day',
+  mode: getInitialMode(),
 };
 
 const modeReducer = (state = INITIAL_STATE, action) => {
