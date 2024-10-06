@@ -84,6 +84,26 @@ let songsArray = [
     name: 'Home Grown – End of the Road',
     src: './assets/musics/music5.mp3',
   },
+  {
+    id: 17,
+    name: 'Midnight Hour – Chill With Me',
+    src: './assets/musics/music6.mp3',
+  },
+  {
+    id: 18,
+    name: 'Sutton – Brighter Days',
+    src: './assets/musics/music7.mp3',
+  },
+  {
+    id: 19,
+    name: 'swiftly, Noji – Sunny Side',
+    src: './assets/musics/music8.mp3',
+  },
+  {
+    id: 20,
+    name: 'Ninn Tendo – Let’s Fly Away',
+    src: './assets/musics/music9.mp3',
+  },
 ];
 
 function shuffleArray(array) {
