@@ -1,7 +1,9 @@
 import { SET_SCENE } from '../constantsType/actionType';
 
+const scenes = ['chillVibes', 'chillVibes2', 'cozyStudio', 'autumnForest', 'snowyEveningCity', 'cozyRoomSunset'];
+
 const INITIAL_STATE = {
-    sceneValue: 'chillVibes',
+    sceneValue: scenes[Math.floor(Math.random() * scenes.length)],
 };
 
 const sceneReducer = (state = INITIAL_STATE, action) => {

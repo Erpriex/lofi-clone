@@ -126,6 +126,33 @@ const Home = () => {
           >
               <source src='/assets/videos/cozy_studio/Cozy_day_rain.mp4' type='video/mp4'/>
           </video>
+          {/* Autumn Forest */}
+          <video
+              className={sceneValue === 'autumnForest' ? 'videoIn' : 'videoOut'}
+              autoPlay
+              loop
+              muted
+          >
+              <source src='/assets/videos/autumn_forest/autumn-forest.mp4' type='video/mp4'/>
+          </video>
+          {/* Snowy Evening City */}
+          <video
+              className={sceneValue === 'snowyEveningCity' ? 'videoIn' : 'videoOut'}
+              autoPlay
+              loop
+              muted
+          >
+              <source src='/assets/videos/snowy-evening-city/snowy-evening-city.mp4' type='video/mp4'/>
+          </video>
+          {/* Cozy Room Sunset */}
+          <video
+              className={sceneValue === 'cozyRoomSunset' ? 'videoIn' : 'videoOut'}
+              autoPlay
+              loop
+              muted
+          >
+              <source src='/assets/videos/cozy_room_sunset/cozy-room-sunset.mp4' type='video/mp4'/>
+          </video>
           <ModifierBoard/>
           <Footer/>
       </>

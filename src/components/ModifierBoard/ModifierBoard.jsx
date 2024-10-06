@@ -330,6 +330,20 @@ const ModifierBoard = () => {
                    onClick={(e) => changeSceneHandler("cozyStudio")}>
                 <img className="sceneselector__thumb" src="./assets/thumbnails/cozyStudio.png" alt="Cozy Studio"/>
               </div>
+              <div className={`sceneselector ${sceneValue === "autumnForest" ? "currentscene" : ""}`}
+                   onClick={(e) => changeSceneHandler("autumnForest")}>
+                <img className="sceneselector__thumb" src="./assets/thumbnails/autumnForest.png" alt="Autumn Forest"/>
+              </div>
+              <div className={`sceneselector ${sceneValue === "snowyEveningCity" ? "currentscene" : ""}`}
+                   onClick={(e) => changeSceneHandler("snowyEveningCity")}>
+                <img className="sceneselector__thumb" src="./assets/thumbnails/snowyEveningCity.png"
+                     alt="Snowy Evening City"/>
+              </div>
+              <div className={`sceneselector ${sceneValue === "cozyRoomSunset" ? "currentscene" : ""}`}
+                   onClick={(e) => changeSceneHandler("cozyRoomSunset")}>
+                <img className="sceneselector__thumb" src="./assets/thumbnails/cozyRoomSunset.png"
+                     alt="Cozy Room Sunset"/>
+              </div>
             </div>
         )}
       </div>

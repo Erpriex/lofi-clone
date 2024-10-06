@@ -2,6 +2,8 @@ import React from 'react';
 import { styled } from '@mui/material/styles';
 import Switch from '@mui/material/Switch';
 import FormControlLabel from '@mui/material/FormControlLabel';
+import {changeDayNight} from "../../redux/actions";
+import {useDispatch, useSelector} from "react-redux";
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -51,11 +53,18 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 }));
 
 const DarkLightSwitch = ({ theme }) => {
-  // console.log(props.theme);
+  const dispatch = useDispatch();
+  const daynight = useSelector((state) => state.modeState);
+  const { mode } = daynight;
+
+  const daynightHandler = () => {
+    dispatch(changeDayNight(mode));
+  };
+
   return (
     <FormControlLabel
-      control={<MaterialUISwitch sx={{ m: 1 }} theme={theme} />}
-      label={''}
+      control={<MaterialUISwitch onClick={daynightHandler} sx={{ m: 1 }} theme={theme} checked={theme === 'night'} />}
+      label=''
     />
   );
 };

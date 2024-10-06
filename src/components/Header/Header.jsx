@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
-import { useSelector, useDispatch } from 'react-redux';
-import { changeDayNight } from '../../redux/actions';
+import { useSelector } from 'react-redux';
 import './Header.scss';
 import { Link } from 'react-router-dom';
 import DarkLightSwitch from '../DarkLightSwitch/DarkLightSwitch';
@@ -9,13 +8,10 @@ import DarkLightSwitch from '../DarkLightSwitch/DarkLightSwitch';
 const Header = () => {
   const [fullscreen, setFullscreen] = useState(false);
   const daynight = useSelector((state) => state.modeState);
-  const dispatch = useDispatch();
+  const scene = useSelector((state) => state.sceneState);
 
   const { mode } = daynight;
-
-  const daynightHandler = () => {
-    dispatch(changeDayNight(mode));
-  };
+  const { sceneValue } = scene;
 
   const fullscreenHandler = () => {
     if (!fullscreen) {
@@ -36,15 +32,28 @@ const Header = () => {
     }
   };
 
+  const showDarkLightSwitch = () => {
+    switch(sceneValue) {
+      case 'chillVibes':
+      case 'chillVibes2':
+      case 'cozyStudio':
+            return true;
+      default:
+        return false;
+    }
+  };
+
   return (
     <nav className='wrap'>
       <Link to='/'>
         <img src='/assets/icons/lofi-logo.gif' alt='' />
       </Link>
       <div className='nav-menu'>
-        <div onClick={daynightHandler}>
-          <DarkLightSwitch theme={mode} />
-        </div>
+        {showDarkLightSwitch() && (
+            <div>
+              <DarkLightSwitch theme={mode}/>
+            </div>
+        )}
 
         <button onClick={fullscreenHandler} className='fullscreen-btn'>
           <i className='fas fa-expand fa-lg'></i>
