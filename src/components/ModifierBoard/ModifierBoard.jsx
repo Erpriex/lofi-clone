@@ -343,7 +343,12 @@ const ModifierBoard = () => {
               <div className={`sceneselector ${sceneValue === "cozyAutumnRoom" ? "currentscene" : ""}`}
                    onClick={(e) => changeSceneHandler("cozyAutumnRoom")}>
                 <img className="sceneselector__thumb" src="./assets/thumbnails/cozyAutumnRoom.png"
-                     alt="Forest House"/>
+                     alt="Cozy Autumn Room"/>
+              </div>
+              <div className={`sceneselector ${sceneValue === "halloweenCat" ? "currentscene" : ""}`}
+                   onClick={(e) => changeSceneHandler("halloweenCat")}>
+                <img className="sceneselector__thumb" src="./assets/thumbnails/halloweenCat.png"
+                     alt="Halloween Cat"/>
               </div>
             </div>
         )}

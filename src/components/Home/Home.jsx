@@ -68,6 +68,9 @@ const Home = () => {
                     case 'cozyAutumnRoom':
                         setCurrentScene('/assets/videos/cozy_autumn_room/cozy-autumn-room.mp4');
                         break;
+                    case 'halloweenCat':
+                        setCurrentScene('/assets/videos/halloween_cat/halloween-cat.mp4');
+                        break;
                     default:
                         setCurrentScene('');
                 }
