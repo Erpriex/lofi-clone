@@ -6,18 +6,13 @@
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 1;
-  transition: opacity 1s;
+  transition: opacity 0.5s ease-in-out;
 }
 
-.videoOut {
-  z-index: 1;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.fadeIn {
+  opacity: 1;
+}
+
+.fadeOut {
   opacity: 0;
-  transition: opacity 1s;
 }

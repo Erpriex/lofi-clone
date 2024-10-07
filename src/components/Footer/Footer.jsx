@@ -12,7 +12,6 @@ const Footer = () => {
     <div className='footer'>
         <div className='author'>
             <span>{songs[currentSongIndex].name}</span>
-            <span>Inspiré de Lofi.co</span>
         </div>
         <div className='controller'>
             <Player

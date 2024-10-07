@@ -104,6 +104,11 @@ let songsArray = [
     name: 'Ninn Tendo – Let’s Fly Away',
     src: './assets/musics/music9.mp3',
   },
+  {
+    id: 21,
+    name: 'Lumaly - Infinite Feeling',
+    src: './assets/musics/music10.mp3',
+  },
 ];
 
 function shuffleArray(array) {

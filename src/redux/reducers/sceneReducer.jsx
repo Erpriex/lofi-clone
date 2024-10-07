@@ -1,6 +1,6 @@
 import { SET_SCENE } from '../constantsType/actionType';
 
-const scenes = ['chillVibes', 'chillVibes2', 'cozyStudio', 'autumnForest', 'snowyEveningCity', 'cozyRoomSunset'];
+const scenes = ['chillVibes', 'chillVibes2', 'cozyStudio', 'cozyRoomSunset', 'forestHouse'];
 
 const INITIAL_STATE = {
     sceneValue: scenes[Math.floor(Math.random() * scenes.length)],

@@ -1,8 +1,7 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
 import './Home.scss';
 import { useSelector } from 'react-redux';
-import RainToggleButton from '../RainToggleButton/RainToggleButton';
 import ModifierBoard from '../ModifierBoard/ModifierBoard';
 import Footer from '../Footer/Footer';
 
@@ -17,141 +16,83 @@ const Home = () => {
 
   const combineMode = `${mode}-${rainMode}`;
 
+  const [currentScene, setCurrentScene] = useState('');
+  const [isFadingOut, setIsFadingOut] = useState(false);
+  const [isFadingIn, setIsFadingIn] = useState(false);
+
+    useEffect(() => {
+        const changeScene = () => {
+            setIsFadingOut(true);
+
+            setTimeout(() => {
+                switch (sceneValue) {
+                    case 'chillVibes':
+                        if (combineMode === 'night-clear') {
+                            setCurrentScene('/assets/videos/chill_vibes/Chill_night.mp4');
+                        } else if (combineMode === 'night-rain') {
+                            setCurrentScene('/assets/videos/chill_vibes/Chill_night_rain.mp4');
+                        } else if (combineMode === 'day-clear') {
+                            setCurrentScene('/assets/videos/chill_vibes/Chill_day.mp4');
+                        } else if (combineMode === 'day-rain') {
+                            setCurrentScene('/assets/videos/chill_vibes/Chill_day_rain.mp4');
+                        }
+                        break;
+                    case 'chillVibes2':
+                        if (combineMode === 'night-clear') {
+                            setCurrentScene('/assets/videos/chill_vibes2/Chill2_night.mp4');
+                        } else if (combineMode === 'night-rain') {
+                            setCurrentScene('/assets/videos/chill_vibes2/Chill2_night_rain.mp4');
+                        } else if (combineMode === 'day-clear') {
+                            setCurrentScene('/assets/videos/chill_vibes2/Chill2_day.mp4');
+                        } else if (combineMode === 'day-rain') {
+                            setCurrentScene('/assets/videos/chill_vibes2/Chill2_day_rain.mp4');
+                        }
+                        break;
+                    case 'cozyStudio':
+                        if (combineMode === 'night-clear') {
+                            setCurrentScene('/assets/videos/cozy_studio/Cozy_night.mp4');
+                        } else if (combineMode === 'night-rain') {
+                            setCurrentScene('/assets/videos/cozy_studio/Cozy_night_rain.mp4');
+                        } else if (combineMode === 'day-clear') {
+                            setCurrentScene('/assets/videos/cozy_studio/Cozy_day.mp4');
+                        } else if (combineMode === 'day-rain') {
+                            setCurrentScene('/assets/videos/cozy_studio/Cozy_day_rain.mp4');
+                        }
+                        break;
+                    case 'cozyRoomSunset':
+                        setCurrentScene('/assets/videos/cozy_room_sunset/cozy-room-sunset.mp4');
+                        break;
+                    case 'forestHouse':
+                        setCurrentScene('/assets/videos/forest_house/forest-house.mp4');
+                        break;
+                    case 'cozyAutumnRoom':
+                        setCurrentScene('/assets/videos/cozy_autumn_room/cozy-autumn-room.mp4');
+                        break;
+                    default:
+                        setCurrentScene('');
+                }
+
+                setTimeout(() => {
+                    setIsFadingOut(false);
+                    setIsFadingIn(true);
+                }, 100);
+            }, 500);
+        };
+
+        changeScene();
+    }, [sceneValue, combineMode]);
+
   return (
       <>
-          {/* Chill Vibes */}
-          {/* Night */}
           <video
-              className={combineMode === 'night-clear' && sceneValue === 'chillVibes' ? 'videoIn' : 'videoOut'}
+              key={currentScene}
+              className={`videoIn ${isFadingOut ? 'fadeOut' : ''} ${isFadingIn ? 'fadeIn' : ''}`}
               autoPlay
               loop
               muted
+              onTransitionEnd={() => setIsFadingIn(false)}
           >
-              <source src='/assets/videos/chill_vibes/Chill_night.mp4' type='video/mp4'/>
-          </video>
-          <video
-              className={combineMode === 'night-rain' && sceneValue === 'chillVibes' ? 'videoIn' : 'videoOut'}
-              autoPlay
-              loop
-              muted
-          >
-              <source src='/assets/videos/chill_vibes/Chill_night_rain.mp4' type='video/mp4'/>
-          </video>
-          {/* Day */}
-          <video
-              className={combineMode === 'day-clear' && sceneValue === 'chillVibes' ? 'videoIn' : 'videoOut'}
-              autoPlay
-              loop
-              muted
-          >
-              <source src='/assets/videos/chill_vibes/Chill_day.mp4' type='video/mp4'/>
-          </video>
-          <video
-              className={combineMode === 'day-rain' && sceneValue === 'chillVibes' ? 'videoIn' : 'videoOut'}
-              autoPlay
-              loop
-              muted
-          >
-              <source src='/assets/videos/chill_vibes/Chill_day_rain.mp4' type='video/mp4'/>
-          </video>
-
-          {/* Chill Vibes 2 */}
-          {/* Night */}
-          <video
-              className={combineMode === 'night-clear' && sceneValue === 'chillVibes2' ? 'videoIn' : 'videoOut'}
-              autoPlay
-              loop
-              muted
-          >
-              <source src='/assets/videos/chill_vibes2/Chill2_night.mp4' type='video/mp4'/>
-          </video>
-          <video
-              className={combineMode === 'night-rain' && sceneValue === 'chillVibes2' ? 'videoIn' : 'videoOut'}
-              autoPlay
-              loop
-              muted
-          >
-              <source src='/assets/videos/chill_vibes2/Chill2_night_rain.mp4' type='video/mp4'/>
-          </video>
-          {/* Day */}
-          <video
-              className={combineMode === 'day-clear' && sceneValue === 'chillVibes2' ? 'videoIn' : 'videoOut'}
-              autoPlay
-              loop
-              muted
-          >
-              <source src='/assets/videos/chill_vibes2/Chill2_day.mp4' type='video/mp4'/>
-          </video>
-          <video
-              className={combineMode === 'day-rain' && sceneValue === 'chillVibes2' ? 'videoIn' : 'videoOut'}
-              autoPlay
-              loop
-              muted
-          >
-              <source src='/assets/videos/chill_vibes2/Chill2_day_rain.mp4' type='video/mp4'/>
-          </video>
-
-          {/* Cozy Studio */}
-          {/* Night */}
-          <video
-              className={combineMode === 'night-clear' && sceneValue === 'cozyStudio' ? 'videoIn' : 'videoOut'}
-              autoPlay
-              loop
-              muted
-          >
-              <source src='/assets/videos/cozy_studio/Cozy_night.mp4' type='video/mp4'/>
-          </video>
-          <video
-              className={combineMode === 'night-rain' && sceneValue === 'cozyStudio' ? 'videoIn' : 'videoOut'}
-              autoPlay
-              loop
-              muted
-          >
-              <source src='/assets/videos/cozy_studio/Cozy_night_rain.mp4' type='video/mp4'/>
-          </video>
-          {/* Day */}
-          <video
-              className={combineMode === 'day-clear' && sceneValue === 'cozyStudio' ? 'videoIn' : 'videoOut'}
-              autoPlay
-              loop
-              muted
-          >
-              <source src='/assets/videos/cozy_studio/Cozy_day.mp4' type='video/mp4'/>
-          </video>
-          <video
-              className={combineMode === 'day-rain' && sceneValue === 'cozyStudio' ? 'videoIn' : 'videoOut'}
-              autoPlay
-              loop
-              muted
-          >
-              <source src='/assets/videos/cozy_studio/Cozy_day_rain.mp4' type='video/mp4'/>
-          </video>
-          {/* Autumn Forest */}
-          <video
-              className={sceneValue === 'autumnForest' ? 'videoIn' : 'videoOut'}
-              autoPlay
-              loop
-              muted
-          >
-              <source src='/assets/videos/autumn_forest/autumn-forest.mp4' type='video/mp4'/>
-          </video>
-          {/* Snowy Evening City */}
-          <video
-              className={sceneValue === 'snowyEveningCity' ? 'videoIn' : 'videoOut'}
-              autoPlay
-              loop
-              muted
-          >
-              <source src='/assets/videos/snowy-evening-city/snowy-evening-city.mp4' type='video/mp4'/>
-          </video>
-          {/* Cozy Room Sunset */}
-          <video
-              className={sceneValue === 'cozyRoomSunset' ? 'videoIn' : 'videoOut'}
-              autoPlay
-              loop
-              muted
-          >
-              <source src='/assets/videos/cozy_room_sunset/cozy-room-sunset.mp4' type='video/mp4'/>
+              <source src={currentScene} type='video/mp4'/>
           </video>
           <ModifierBoard/>
           <Footer/>
